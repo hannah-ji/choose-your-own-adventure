@@ -1,0 +1,1716 @@
+def intro():
+    global name, school
+    print("Welcome to high school! You are the class of 2024. Your goal is to graduate high school.")
+    name = input("Enter your name: ")
+    print("\n")
+    print(f'Hi {name}! It is the first day of school. You are already running late.')
+    print("1: Run to school")
+    print("2: Beg your older brother to drive you")
+    print("3: Take your time and walk to school.")
+    intro_choice = input("Enter 1, 2, or 3")
+    
+    if intro_choice == '1':
+        print("\n")
+        print("You rush out the door and run to school You made it to first period just on time!")
+        first_day_school()
+        
+    elif intro_choice == '2':
+        print("\n")
+        print("Your brother looks annoyed and rolls his eyes. You get to school on time.")
+        first_day_school()
+        
+    elif intro_choice == '3':
+        print("\n")
+        print("You leisurely walk to school and are 20 minutes late. You make a bad impression on your first period teacher.")
+        points = "-10 school standing"
+        points_length = len(points)-4
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        school = school -10
+        first_day_school()
+        
+    else:
+        print("\n")
+        print("Oops, enter a number 1, 2, or 3")
+        intro()
+
+def first_day_school():
+    print("\n")
+    print("Looking around the room, you have to decide where to sit.")
+    print("1: Next to Brynn at the front,")
+    print("2: Next to Tristan, in the middle,")
+    print("3: Or at the back, next to Natalie?")
+    sit = input("Enter 1 for front, enter 2 for middle, or enter 3 for back")
+
+    if sit == '1':
+        print("\n")
+        print("Brynn introduces herself. She is:")
+        print("- Captain of the cheer team")
+        print("- Very studious and focused on grades")
+        print("- Likes to bake a lot and brings food to school everyday")
+        confirm_brynn()
+
+    elif sit == '2':
+        print("\n")
+        print("Tristan introduces himself. He:")
+        print("- Wants to become a professional basketball player")
+        print("- Has two younger sisters and lives with his mom")
+        print("- Chatty and outgoing")
+        confirm_tristan()
+    
+    elif sit == '3':
+        print("\n")
+        print("Natalie introduces herself. She:")
+        print("- Is always listening to music")
+        print("- Owns a pet snake")
+        print("- Is very honest and upfront")
+        confirm_natalie()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1, 2, or 3")
+        first_day_school()
+
+def confirm_brynn():
+    global friends
+    print("\n")
+    print("Are you happy with your choice?")
+    print("1: Yes, I want to sit here")
+    print("2: No, go back")
+    confirm = input("Enter 1 or 2")
+
+    if confirm == '1':
+        print("\n")
+        points = "You made 1 friend: Brynn"
+        points_length = len(points) - 4
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Brynn")
+        lunch_brynn()
+        
+    elif confirm == '2':
+        first_day_school()
+        
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        confirm_brynn()
+        
+def confirm_tristan():
+    global friends
+    print("\n")
+    print("Are you happy with your choice?")
+    print("1: Yes, I want to sit here")
+    print("2: No, go back")
+    confirm = input("Enter 1 or 2")
+
+    if confirm == '1':
+        print("\n")
+        points = "You made 1 friend: Tristan"
+        points_length = len(points) - 4
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Tristan")
+        lunch_tristan()
+        
+    elif confirm == '2':
+        first_day_school()
+        
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        confirm_tristan()
+
+def confirm_natalie():
+    global friends
+    print("\n")
+    print("Are you happy with your choice?")
+    print("1: Yes, I want to sit here")
+    print("2: No, go back")
+    confirm = input("Enter 1 or 2")
+
+    if confirm == '1':
+        print("\n")
+        points = "You made 1 friend: Natalie"
+        points_length = len(points) - 4
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Natalie")
+        lunch_natalie()
+        
+    elif confirm == '2':
+        first_day_school()
+        
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        confirm_natalie()
+        
+def lunch_brynn():
+    global relationship
+    print("\n")
+    print("After becoming fast friends, Brynn asks if you want to sit with her and her friends at lunch. Do you go?")
+    print("1: Sure!")
+    print("2: No thanks")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        points = "+5 relationship points"
+        points_length = len(points) - 4
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship +5
+        lunch_brynn_cont()
+
+    elif choice == '2':
+        print("Brynn looks disappointed")
+        print("\n")
+        points = "-5 relationship"
+        points_length = len(points) - 4
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship - 5
+        lunch_cont()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        lunch_brynn()   
+
+def lunch_natalie():
+    global relationship
+    print("\n")
+    print("After becoming fast friends, Natalie asks if you want to sit with her and her friends at lunch. Do you go?")
+    print("1: Sure!")
+    print("2: No thanks")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        points = "+5 relationship points"
+        points_length = len(points) - 4
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship +5
+        lunch_natalie_cont()
+
+    elif choice == '2':
+        print("\n")
+        print("Natalie looks disappointed.")
+        print("\n")
+        points = "-5 relationship points"
+        points_length = len(points) - 5
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship - 5
+        lunch_cont()
+
+    else:
+        print("\n")
+        print("Oops,please enter 1 or 2")
+        lunch_natalie()
+
+def lunch_tristan():
+    global relationship
+    print("\n")
+    print("After becoming fast friends, Tristan asks if you want to sit with him and his friends at lunch. Do you go?")
+    print("1: Sure!")
+    print("2: No thanks")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        points = "+5 relationship points"
+        points_length = len(points) - 4
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship +5
+        lunch_tristan_cont()
+
+    elif choice == '2':
+        print("\n")
+        print("Tristan looks disappointed.")
+        print("\n")
+        points = "-5 relationship points"
+        points_length = len(points) - 6
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship - 5
+        lunch_cont()
+
+    else:
+        print("\n")
+        print("Oops,please enter 1 or 2")
+        lunch_tristan()
+
+def lunch_tristan_cont():
+    global friends, relationship, clubs
+    print("\n")
+    print("It's lunch time and you meet Tristan's friends: Carla and Nathan.")
+    print("They ask you if you want to join the basketball team with them. What do you say?")
+    print("1: Yes!")
+    print("2: No thanks")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        print("Tristan, Carla, and Nathan are happy that you joined!")
+        points = "+2 friends, +1 club, +15 friendship points"
+        points_length = len(points) - 12
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Carla")
+        friends.append("Nathan")
+        clubs.append("Basketball team")
+        relationship = relationship + 15
+        home()
+
+    elif choice == '2':
+        print("\n")
+        print("Oh well, maybe next time. Tristan, Carla, and Nathan look disappointed.")
+        points = "-5 relationship points"
+        points_length = len(points) - 6
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship - 5
+        home()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        lunch_tristan_cont()
+
+def lunch_natalie_cont():
+    global friends, relationship, clubs
+    print("\n")
+    print("It's lunch time and you meet Natalie's friends: Kristen and Thomas.")
+    print("They ask you if you want to join the music club. What do you say?")
+    print("1: Yes!")
+    print("2: No thanks")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        print("Natalie, Kristen, and Thomas are happy that you joined!")
+        points = "+2 friends, +1 club, +15 friendship points"
+        points_length = len(points) -12
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Kristen")
+        friends.append("Thomas")
+        clubs.append("Music club")
+        relationship = relationship + 15
+        home()
+
+    elif choice == '2':
+        print("\n")
+        print("Oh well, maybe next time. Brynn, Kathryn, and Samantha look disappointed.")
+        points = "-5 relationship points"
+        points_length = len(points) - 6
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship - 5
+        home()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        lunch_natalie_cont()
+
+def lunch_brynn_cont():
+    global friends, relationship, clubs
+    print("\n")
+    print("It's lunch time and you meet Brynn's friends: Kathryn and Samantha.")
+    print("They ask you if you want to join the cheer team with them. What do you say?")
+    print("1: Yes!")
+    print("2: No thanks")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        print("Brynn, Kathryn, and Samantha are happy that you joined!")
+        points = "+2 friends, +1 club, +15 friendship points"
+        points_length = len(points) - 9
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Kathryn")
+        friends.append("Samantha")
+        clubs.append("Cheer team")
+        relationship = relationship + 15
+        home()
+
+    elif choice == '2':
+        print("\n")
+        print("Oh well, maybe next time. Brynn, Kathryn, and Samantha look disappointed.")
+        points = "-5 relationship points"
+        points_length = len(points) - 6
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship - 5
+        home()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        lunch_brynn_cont()
+
+def lunch_cont():
+    print("\n")
+    print("Where do you go at lunch?")
+    print("1: Library")
+    print("2: Gym")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        library()
+
+    elif choice == '2':
+        gym()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        lunch_cont()
+
+def library():
+    global grades, relationship
+    print("\n")
+    print("In the library, you see your old childhood friend, Lisa. She looks up and sees you.")
+    print("1: Say hi")
+    print("2: Ignore them and do your homework")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        library_2()
+
+    elif choice == '2':
+        print("\n")
+        print("Lisa looks hurt that you've ignored her. You spend your time at the library catching up on homework.")
+        points = "-5 relationship points, +5 grades"
+        points_length = len(points) - 11
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship - 5
+        grades = grades + 5
+        home()
+
+    else:
+        print("\n")
+        print("Oops, enter 1 or 2")
+        library()
+
+def gym():
+    global relationship
+    print("\n")
+    print("At the gym, you see your old friend, Sam. He looks up and waves at you.")
+    print("1: Say hi")
+    print("2: Ignore him")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        gym_2()
+
+    elif choice == '2':
+        print("\n")
+        print("You avoid him. Sam looks hurt.")
+        points = "-5 relationship points"
+        points_length = len(points) - 5
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship - 5
+        home()
+
+    else:
+        print("\n")
+        print("Oops, enter 1 or 2")
+        gym()
+
+def library_2():
+    global friends, relationship, clubs
+    print("\n")
+    print("Lisa is glad to see you.")
+    print("She says she and her friend Naomi are running the book club this year and needs members to join.")
+    print("What do you say?")
+    print("1: Sure, would love to")
+    print("2: No thanks")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        print("Great, Lisa and Naomi are excited to have you join the book club.")
+        points = "+2 friends, +15 relationship, +1 club"
+        points_length = len(points) - 11
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Lisa")
+        friends.append("Naomi")
+        relationship = relationship + 15
+        clubs.append("Book club")
+        home()
+
+    elif choice == '2':
+        print("\n")
+        print("Oh well, it was nice catching up.")
+        points = "+1 friend"
+        points_length = len(points) - 2
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Lisa")
+        home()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        library_2()
+
+def gym_2():
+    global friends
+    print("\n")
+    print("He's happy to see you.")
+    print("Play a game of volleyball with his friends?")
+    print("1: Would love to")
+    print("2: No thanks")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        gym_3()
+
+    elif choice == '2':
+        print("\n")
+        print("Oh well, it was nice catching up")
+        points = "+1 friend"
+        points_length = len(points) - 3
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Sam")
+        home()
+
+    else:
+        print("\n")
+        print("Oops, enter 1 or 2")
+        gym_2()
+        
+def gym_3():
+    global friends, relationship, clubs
+    print("\n")
+    print("You play a quick game with them.")
+    print("Louie, Sam's friend is impressed with your skills. He asks if you want to join the volleyball team.")
+    print("1: Sure!")
+    print("2: No thanks")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        print("Louie and Sam are excited to have you on the team.")
+        points = "+2 friends, +15 relationship points, +1 club"
+        points_length = len(points) - 14
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Sam")
+        friends.append("Louie")
+        relationship = relationship + 15
+        clubs.append("Volleyball")
+        home()
+
+    elif choice == '2':
+        print("\n")
+        print("Oh well, it was still fun playing.")
+        points = "+1 friend, +5 relationship points"
+        points_length = len(points) - 8
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        friends.append("Sam")
+        relationship = relationship + 5
+        home()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        gym_3()
+
+def home():
+    print("\n")
+    print("You're done at school and back at home.")
+    print("You realize you have a very important test tomorrow and need to study.")
+    print("1: Study now, you need to be prepared.")
+    print("2: Don't study")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        print("You study and feel prepared for the test.")
+        studied()
+
+    elif choice == '2':
+        print("\n")
+        print("You decide to treat yourself to a day off.")
+        no_study()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        home()
+
+def studied():
+    global grades
+    print("\n")
+    print("When you get to class, you're feeling confident.")
+    print("Brianna, the person next to you asks to cheat off of your test.")
+    print("You know that your teacher is very strict, so what do you do?")
+    print("1: Say no, don't let them copy")
+    print("2: Let them")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        print("You don't let Brianna cheat off of you.")
+        print("Good choice, you get a good grade on the test!")
+        grades = grades + 10
+        points = "Gain 10 grade points"
+        points_length = len(points) - 4
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grade12()
+
+    elif choice == '2':
+        study_cheat()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        studied()
+    
+def no_study():
+    print("\n")
+    print("You get to class and realize you might fail the test. What do you do?")
+    print("1: Just do the test")
+    print("2: Ask Brianna if you can cheat off of her")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        print("Better safe than sorry.")
+        print("You didn't do so well on the test.")
+        points = "Lose 5 grade points"
+        points_length = len(points) - 5
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grade12()
+
+    elif choice == '2':
+        no_study_cheat()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        no_study()
+
+def study_cheat():
+    global favour, relationship, school
+    print("\n")
+    print("You agree.")
+    print("It's halfway through the test before your teacher catches you.")
+    print("Uh oh. He looks very mad. What do you say?")
+    print("1: Take responsibility")
+    print("2: Tell the truth")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        print("The teacher gives you a warning, but Brianna remembers what you did and owes you.")
+        favour = True
+        school = school - 10
+        points = "+1 favour, -10 school standing"
+        points_length = len(points) - 6
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grade12()
+
+    elif choice == '2':
+        print("\n")
+        print("Brianna is very mad. You get a warning from your teacher.")
+        points = "-5 relationship points, -5 school standing"
+        points_length = len(points) - 4
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship - 5
+        grade12()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        study_cheat()
+
+def no_study_cheat():
+    global favour, relationship, school, grades
+    print("\n")
+    print("She agrees and lets you copy.")
+    print("It's halfway through the test before your teacher catches you.")
+    print("Uh oh. He looks very mad. What do you say?")
+    print("1: Tell the teacher the truth")
+    print("2: Lie and try to blame Brianna")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        print("\n")
+        print("The teacher gives you a 0. Brianna appreciates your honesty and will remember what you did.")
+        favour = True
+        grades = grades - 10
+        school = school - 5
+        points = "+1 favour, -10 grades, -5 school standing"
+        points_length = len(points) - 5
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grade12()
+
+    elif choice == '2':
+        print("\n")
+        print("Brianna is very mad. The teacher sees right through your lie and gives you a 0.")
+        points = "-10 grades, -5 relationships, -10 school standing"
+        points_length = len(points) - 12
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        relationship = relationship - 5
+        grades = grades - 10
+        school = school - 10
+        grade12()
+
+    else:
+        print("/n")
+        print("Oops, please enter 1 or 2")
+        no_study_cheat()
+
+def grade12():
+    print("\n")
+    print("Before you know it, you're in grade 12. It's the last year of high school!")
+    print("First things first: you want to get a part time job to help save up for university or college.")
+    print("There are 3 opportunities available:")
+    print("\n")
+    print("1: Hiring at the pool! Looking for qualified lifeguards and swim instructors:")
+    print("- 15 hours/week")
+    print("- $16/h")
+    print("\n")
+    print("2: Looking for energetic cashiers at Whole Foods:")
+    print("- 18 hours/week")
+    print("- $14/h")
+    print("\n")
+    print("3: Hiring at McDonaldsl! Need cashiers and cooks:")
+    print("- 20 hours/week")
+    print("- $13/h")
+    print("\n")
+    choice = input("Enter 1, 2, or 3")
+
+    if choice == '1':
+        pool_interview()
+
+    elif choice == '2':
+        whole_foods_interview()
+
+    elif choice == '3':
+        mcdonalds_interview()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1, 2 or 3")
+        grade12()
+
+def pool_interview():
+    print("\n")
+    print("Congrats! You got an interview for the position of a lifeguard.")
+    print("At the interview, they ask you first aid questions.")
+    print("They ask how many compressions and breaths you should give when doing CPR.")
+    print("\n")
+    print("1: 25 compressions, 1 breath")
+    print("2: 30 compressions, 2 breaths")
+    print("3: 20 compressions, 2 breaths")
+    choice = input("Enter 1, 2, or 3")
+
+    if choice == '1' or choice == '3':
+        print("\n")
+        print("Sorry, your answer was incorrect, you did not get the job.")
+        grade12_2()
+
+    elif choice == '2':
+        pool_job()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1, 2, or 3")
+        pool_interview()
+    
+
+def whole_foods_interview():
+    print("\n")
+    print("You got an interview offer at Whole Foods.")
+    print("They ask you why you would be a good fit for the job.")
+    print("How do you answer?")
+    print("\n")
+    print("1: I will provide excellent customer service through my friendly demeanor.")
+    print("2: I can count change.")
+    print("3: I am responsible and can work efficiently doing repetitive work.")
+    choice = input("Enter 1, 2, or 3")
+
+    if choice == '1' or choice == '3':
+        whole_foods_job()
+
+    elif choice == '2':
+        print("\n")
+        print("Sorry, you did not get the job.")
+        grade12_2()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1, 2, or 3")
+        whole_foods_interview()
+
+def mcdonalds_interview():
+    print("\n")
+    print("You got an interview offer at McDonald's.")
+    print("They ask you why they should hire you.")
+    print("What do you say?")
+    print("\n")
+    print("1: I can perform well under stress and in a fast paced environment.")
+    print("2: I am a quick learner and will perform the duties of my job to the highest standard.")
+    print("3: I want the job so I can make money.")
+    choice = input("Enter 1, 2, or 3")
+
+    if choice == '1' or choice == '2':
+        mcdonalds_job()
+
+    elif choice == '3':
+        print("\n")
+        print("Sorry, you did not get the job.")
+        grade12_2()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1, 2, or 3")
+        mcdonalds_interview()
+    
+def pool_job():
+    global lifeguard_job
+    print("\n")
+    print("Good job, you answered the question correctly!")
+    print("Congrats, you got the job!")
+    print("You will get paid $1152 per month")
+    points = "+1 job"
+    points_length = len(points) 
+    print(points_length*"* ")
+    print(points)
+    print(points_length*"* ")
+    lifeguard_job = True
+    grade12_2()
+
+def whole_foods_job():
+    global grocery_job
+    print("\n")
+    print("Congrats, the interviewer was impressed by your answer.")
+    print("You got the job!")
+    print("You will get paid $1008 per month")
+    points = "+1 job"
+    points_length = len(points) 
+    print(points_length*"* ")
+    print(points)
+    print(points_length*"* ")
+    grocery_job = True
+    grade12_2()
+
+def mcdonalds_job():
+    global mcd_job
+    print("\n")
+    print("Congrats, you got the job at McDonalds!")
+    print("You will get paid $936 per month")
+    points = "+1 job"
+    points_length = len(points) 
+    print(points_length*"* ")
+    print(points)
+    print(points_length*"* ")
+    mcd_job = True
+    grade12_2()
+
+def grade12_2():
+    global favour, relationship, grades
+    print("\n")
+    print("Things are picking up. You're trying to balance school and time with your family.")
+    print("You also realize that you need 20 more hours of volunteering to graduate!")
+    print("These hours are due by the end of the week. Uh oh.")
+    print("You have a big test, your brother's birthday, and 20 hours of volunteering to do.")
+    print("\n")
+    print("What do you do?")
+    print("1: Skip out on your brother's birthday and study for your test.")
+    print("2: Celebrate your brother's birthday and don't study for your test.")
+    print("3: Wait, I think I have a favour from someone.")
+    choice = input("Enter 1, 2, or 3")
+
+    if choice == '1':
+        print("\n")
+        print("You miss celebrating you brother's birthday. He's disappointed that you didn't come.")
+        print("You spend your weekend volunteering and studying for your test.")
+        points = "-5 relationship points, +15 grades"
+        points_length = len(points) - 8
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grades = grades + 15
+        relationship = relationship - 5
+        pay1()
+
+    elif choice == '2':
+        print("\n")
+        print("You have a good time celebrating your brother's birthday. You also spend your weekend getting your 20 hours of volunteering.")
+        print("When you write the test on Monday, you don't do so well.")
+        points = "-5 grades, +15 relationship points"
+        points_length = len(points) - 8
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grades = grades - 5
+        relationship = relationship + 15
+        pay1()
+
+    elif choice == '3':
+        if favour == True:
+            get_favour()
+
+        else:
+            print("\n")
+            print("Sorry, you don't have a favour.")
+            grade12_2()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1, 2, or 3")
+        grade12_2()
+
+def get_favour():
+    global grades, relationship
+    print("\n")
+    print("Right, Brianna remembers that she owes you a favour.")
+    print("She runs the local food bank and manages volunteers. She says that she can write you the 20 hours now, so you can hand them in and be able to graduate.")
+    print("You can volunteer later when you're less busy.")
+    print("You have time to celebrate your brother's birthday and study for your test!")
+    print("\n")
+    points = "+15 grades, +15 relationship points"
+    points_length = len(points) - 8
+    print(points_length*"* ")
+    print(points)
+    print(points_length*"* ")
+    grades = grades + 15
+    relationship = relationship + 15
+    pay1()
+
+def pay1():
+    global lifeguard_job, grocery_job, mcd_job, money
+    if lifeguard_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$1152"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 1152
+        choose_path()
+
+    elif grocery_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$1008"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 1008
+        choose_path()
+
+    elif mcd_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$936"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 936
+        choose_path()
+
+    else:
+        choose_path()
+        
+def choose_path():
+    print("\n")
+    print("It's time to choose what to go into. You're deciding between math, science, and business.")
+    print("1: Math")
+    print("2: Science")
+    print("3: Business")
+    choice = input("Enter 1, 2, or 3")
+
+    if choice == '1':
+        math_path()
+
+    elif choice == '2':
+        science_path()
+
+    elif choice == '3':
+        business_path()
+
+    else:
+        print("\n")
+        print("Oops, enter 1, 2, or 3")
+        choose_path()
+
+def math_path():
+    global grades
+    print("\n")
+    print("You take all the necessary math courses. You're hoping to get high enough grades to get into university.")
+    print("On the final exam, your stuck on this question:")
+    print("\n")
+    print("A school committee consists of 2 teachers and 4 students. The number of different committees that can be formed from 5 teachers and 10 students is:")
+    print("1: 200")
+    print("2: 2100")
+    print("3: 15")
+    choice = input("Enter 1, 2, or 3")
+
+    if choice == '1' or choice == '3':
+        print("\n")
+        print("Oh no, you got the answer wrong. That's okay, you still did well on the rest of your exam.")
+        print("It's time to apply to college and university.")
+        points = "+5 grades"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grades = grades + 5
+        pay_math()
+
+    elif choice == '2':
+        print("\n")
+        print("You got the answer right! You did really well on your exam.")
+        print("It's time to apply to college and university.")
+        points = "+15 grades"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grades = grades + 15
+        pay_math()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1, 2, or 3")
+        math_path()
+
+def science_path():
+    global grades
+    print("\n")
+    print("You take all the necessary science courses. You're hoping to get high enough grades to get into university.")
+    print("On the final exam, your stuck on this question:")
+    print("\n")
+    print("Brass gets discoloured in air because of the presence of which of the following gases in air?")
+    print("1: Oxygen")
+    print("2: Hydrogen sulfide")
+    print("3: Nitrogen")
+    choice = input("Enter 1, 2, or 3")
+
+    if choice == '1' or choice == '3':
+        print("\n")
+        print("Oh no, you got the answer wrong. That's okay, you still did well on the rest of your exam.")
+        print("It's time to apply to college and university.")
+        points = "+5 grades"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grades = grades + 5
+        pay_science()
+
+    elif choice == '2':
+        print("\n")
+        print("You got the answer right! You did really well on your exam.")
+        print("It's time to apply to college and university.")
+        points = "+15 grades"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grades = grades + 15
+        pay_science()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1, 2, or 3")
+        science_path()
+
+def business_path():
+    global grades
+    print("\n")
+    print("You take all the necessary business courses. You're hoping to get high enough grades to get into university.")
+    print("On the final exam, your stuck on this question:")
+    print("\n")
+    print("What is the basic accounting equation?")
+    print("1: Assets + Liabilities = Owner's Equity")
+    print("2: Liabilities - Gross Profit = Net Income")
+    print("3: Assets = Liabilities + Owner's Equity")
+    choice = input("Enter 1, 2, or 3")
+
+    if choice == '1' or choice == '2':
+        print("\n")
+        print("Oh no, you got the answer wrong. That's okay, you still did well on the rest of your exam.")
+        print("It's time to apply to college and university.")
+        points = "+5 grades"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grades = grades + 5
+        pay_business()
+
+    elif choice == '3':
+        print("\n")
+        print("You got the answer right! You did really well on your exam.")
+        print("It's time to apply to college and university.")
+        points = "+15 grades"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        grades = grades + 15
+        pay_business()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1, 2, or 3")
+        business_path()
+    
+def pay_math():
+    global lifeguard_job, grocery_job, mcd_job, money
+    if lifeguard_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$1152"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 1152
+        math_path2()
+
+    elif grocery_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$1008"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 1008
+        math_path2()
+
+    elif mcd_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$936"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 936
+        math_path2()
+
+    else:
+        math_path2()
+
+def pay_science():
+    global lifeguard_job, grocery_job, mcd_job, money
+    if lifeguard_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$1152"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 1152
+        science_path2()
+
+    elif grocery_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$1008"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 1008
+        science_path2()
+
+    elif mcd_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$936"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 936
+        science_path2()
+
+    else:
+        science_path2()
+
+def pay_business():
+    global lifeguard_job, grocery_job, mcd_job, money
+    if lifeguard_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$1152"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 1152
+        business_path2()
+
+    elif grocery_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$1008"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 1008
+        business_path2()
+
+    elif mcd_job == True:
+        print("\n")
+        print("It's pay day!")
+        points = "+$936"
+        points_length = len(points) 
+        print(points_length*"* ")
+        print(points)
+        print(points_length*"* ")
+        money = money + 936
+        business_path2()
+
+    else:
+        business_path2()
+
+def math_path2():
+    global grades
+    print("\n")
+    choice = input("You have (1) unread email. Press 1 to open.")
+
+    if choice == '1':
+        if grades >= 80:
+            math_uni_accept()
+        else:
+            print("\n")
+            print("We regret to inform you that you have been rejected from UBC mathematics.")
+            print("Oh no, you were rejected from your first choice. It's okay, keep waiting.")
+            math_email2()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1")
+        math_path2()
+
+def math_uni_accept():
+    global name, math_uni
+    print("\n")
+    print(f'Congratulations {name}! We were very impressed with your application.')
+    print("You are accepted to University of British Columbia Mathematics!")
+    print("\n")
+    print("Wow, you were accepted to your top choice! Accept the offer?")
+    print("1: Yes")
+    print("2: No")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        math_uni = True
+        graduation()
+
+    elif choice == '2':
+        math_email2()
+
+    else:
+        print("\n")
+        print("Oops, enter 1 or 2")
+        math_uni_accept()
+
+def math_email2():
+    global school
+    print("\n")
+    choice = input("You have (1) unread email. Press 1 to open.")
+
+    if choice == '1':
+        if school >= 40:
+            math_college_accept()
+        else:
+            print("\n")
+            print("We regret to inform you that you have been rejected from Humber College Mathematics.")
+            print("Time for plan B...")
+            math_reject()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1")
+        math_email2()
+
+def math_college_accept():
+    global name, math_college
+    print("\n")
+    print(f'Congratulations {name}! We were very impressed with your application.')
+    print("You are accepted to Humber College mathematics!")
+    print("Accept the offer?")
+    print("1: Yes")
+    print("2: No")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        math_college = True
+        graduation()
+
+    elif choice == '2':
+        math_reject()
+
+    else:
+        print("\n")
+        print("Oops, enter 1 or 2")
+        math_college_accept()
+
+def math_reject():
+    global work_after
+    work_after = True
+    print("\n")
+    print("You decide to take some time off after high school and look for a job instead of doing more school.")
+    graduation()
+    
+def science_path2():
+    global grades
+    print("\n")
+    choice = input("You have (1) unread email. Press 1 to open.")
+
+    if choice == '1':
+        if grades >= 80:
+            science_uni_accept()
+        else:
+            print("\n")
+            print("We regret to inform you that you have been rejected from Queens Life Sciences.")
+            print("Oh no, you were rejected from your first choice. It's okay, keep waiting.")
+            science_email2()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1")
+        science_path2()
+        
+def science_uni_accept():
+    global name, science_uni 
+    print("\n")
+    print(f'Congratulations {name}! We were very impressed with your application.')
+    print("You are accepted to Queens Life Sciences!")
+    print("\n")
+    print("Wow, you were accepted to your top choice! Accept the offer?")
+    print("1: Yes")
+    print("2: No")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        science_uni = True
+        graduation()
+
+    elif choice == '2':
+        science_email2()
+
+    else:
+        print("\n")
+        print("Oops, enter 1 or 2")
+        science_uni_accept()
+
+def science_email2():
+    global school
+    print("\n")
+    choice = input("You have (1) unread email. Press 1 to open.")
+
+    if choice == '1':
+        if school >= 40:
+            science_college_accept()
+        else:
+            print("\n")
+            print("We regret to inform you that you have been rejected from Algonquin College Science.")
+            print("Time for plan B...")
+            science_reject()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1")
+        science_email2()
+
+def science_college_accept():
+    global name, science_college
+    print("\n")
+    print(f'Congratulations {name}! We were very impressed with your application.')
+    print("You are accepted to Algonquin Science!")
+    print("Accept the offer?")
+    print("1: Yes")
+    print("2: No")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        science_college = True
+        graduation()
+
+    elif choice == '2':
+        science_reject()
+
+    else:
+        print("\n")
+        print("Oops, enter 1 or 2")
+        science_college_accept()
+
+def science_reject():
+    global work_after
+    print("\n")
+    work_after = True
+    print("You decide to take some time off after high school and look for a job instead of doing more school.")
+    graduation()
+
+def business_path2():
+    global grades
+    print("\n")
+    choice = input("You have (1) unread email. Press 1 to open.")
+
+    if choice == '1':
+        if grades >= 80:
+            business_uni_accept()
+        else:
+            print("\n")
+            print("We regret to inform you that you have been rejected from Western Ivey.")
+            print("Oh no, you were rejected from your first choice. It's okay, keep waiting.")
+            business_email2()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1")
+        business_path2()
+
+def business_uni_accept():
+    global name, bus_uni
+    print("\n")
+    print(f'Congratulations {name}! We were very impressed with your application.')
+    print("You are accepted to Western Ivey!")
+    print("\n")
+    print("Wow, you were accepted to your top choice! Accept the offer?")
+    print("1: Yes")
+    print("2: No")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        bus_uni = True
+        graduation()
+
+    elif choice == '2':
+        business_email2()
+
+    else:
+        print("\n")
+        print("Oops, enter 1 or 2")
+        business_uni_accept()
+
+def business_email2():
+    global school
+    print("\n")
+    choice = input("You have (1) unread email. Press 1 to open.")
+
+    if choice == '1':
+        if school >= 40:
+            business_college_accept()
+        else:
+            print("\n")
+            print("We regret to inform you that you have been rejected from Sheridan Business.")
+            print("Time for plan B...")
+            business_reject()
+
+    else:
+        print("\n")
+        print("Oops, please enter 1")
+        business_email2()
+
+def business_college_accept():
+    global name, bus_college
+    print("\n")
+    print(f'Congratulations {name}! We were very impressed with your application.')
+    print("You are accepted to Sheridan business!")
+    print("Accept the offer?")
+    print("1: Yes")
+    print("2: No")
+    choice = input("Enter 1 or 2")
+
+    if choice == '1':
+        bus_college = True
+        graduation()
+
+    elif choice == '2':
+        business_reject()
+
+    else:
+        print("\n")
+        print("Oops, enter 1 or 2")
+        business_college_accept()
+
+def business_reject():
+    global work_after
+    work_after = True
+    print("\n")
+    print("You decide to take some time off after high school and look for a job instead of doing more school.")
+    graduation()
+
+def graduation():
+    global name, grades, school, friends, clubs, relationship, money, grade_scholarship, people_scholarship
+
+    #scholarships
+    if grades >= 90:
+        print("\n")
+        print("Congrats, because of your stellar grades, you are eligble for the Presedent's Scholarship!")
+        print("Scholarship Amount: $2500")
+        grade_scholarship = True
+
+    if relationship >= 90:
+        print("\n")
+        print("Congrats, your friends nominated you for the People's Scholarship!")
+        print("Scholarship Amount: $2500")
+        people_scholarship = True
+    
+    print("\n")
+    print("You never thought this day would come.")
+    print("It's graduation day, and you're finally done high school. It's been a long 4 years.")
+    print("\n")
+    choice = input("Enter 1 to see your summary.")
+
+    if choice == '1':
+        print("\n")
+        print(f'Hello {name}, here\'s how you did:')
+
+        print("*" *100)
+        print("FUTURE")
+        if science_uni == True:
+            print("You decided to pursue Life Sciences at Queens University.")
+            print("*" *100)
+
+        elif science_college == True:
+            print("You decided to pursue Sciences at Algonquin College.")
+            print("*" *100)
+
+        elif math_uni == True:
+            print("You decided to pursue Mathematics at University of British Columbia.")
+            print("*" *100)
+
+        elif math_college == True:
+            print("You decided to pursue Mathematics at Humber College.")
+            print("*" *100)
+
+        elif bus_uni == True:
+            print("You decided to pursue business at Western Ivey.")
+            print("*" *100)
+
+        elif bus_college == True:
+            print("You decided to pursue business at Sheridan College.")
+            print("*" *100)
+
+        elif work_after == True:
+            print("You decided to take a break after graduating before looking for a job.")
+            print("*" *100)
+
+        print("GRADES")
+        if grades >= 90:
+            print(f'You were a star student, with a {grades/100*100:.0f}% average. You graduated top of your class!')
+            print("*" *100)
+            
+        elif grades < 90 and grades >= 75:
+            print(f'You were a good student, with a {grades/100*100:.0f}% average.')
+            print("*" *100)
+            
+        elif grades < 75 and grades >= 65:
+            print(f'You were a mediocre student, with a {grades/100*100:.0f}% average.')
+            print("*" *100)
+
+        else:
+            print(f'You did not care for your grades, with a {grades/100*100:.0f}% average.')
+            print("*" *100)
+            
+        print("SCHOOL STANDING")
+        if school == 50:
+            print("Your school reputation is pristine. Teachers loved you.")
+            print("*" *100)
+
+        elif school < 50 and school >= 35 :
+            print("You had a few ups and downs, your school reputation was average.")
+            print("*" *100)
+
+        else:
+            print("You caused a lot of trouble at school. The principal knows you by name.")
+            print("*" *100)
+
+        print("FRIENDS")
+        if len(friends) == 0:
+            print("You did not make any friends during high school.")
+            print("*" *100)
+
+        else:
+            print("You made the following friends:")
+            for friend in friends:
+                print(f'- {friend}')
+            print("*" *100)
+
+        print("CLUBS")
+        if len(clubs) == 0:
+            print("You did not join any clubs.")
+            print("*" *100)
+
+        else:
+            print("You joined the following clubs:")
+            for club in clubs:
+                print(f'- {club}')
+            print("*" *100)
+
+        print("RELATIONSHIPS")
+        if relationship <= 100 and relationship >= 80:
+            print("You were a people person. You always thought of your friends and family.")
+            print(f'{relationship}/100 relationship points')
+            print("*" *100)
+
+        elif relationship < 80 and relationship >= 75:
+            print("You had good relationships with your friends and family.")
+            print(f'{relationship}/100 relationship points')
+            print("*" *100)
+            
+        elif relationship < 75 and relationship >= 65:
+            print("You had mediocre relationships with your friends and family.")
+            print(f'{relationship}/100 relationship points')
+            print("*" *100)
+        else:
+            print("You did not have a good relationship with your friends and family.")
+            print(f'{relationship}/100 relationship points')
+            print("*" *100)
+
+        print("MONEY")
+        print(f'You have ${money} saved in your bank account.')
+        print("*" *100)
+
+        print("SCHOLARSHIPS")
+        if grade_scholarship == True:
+            print("- President's Scholarship: $2500")
+            print("*" *100)
+
+        if people_scholarship == True:
+            print("- People's Scholarship: $2500")
+            print("*" *100)
+            
+        if people_scholarship == False and grade_scholarship == False:
+            print("No scholarships awarded")
+            print("*" *100)
+
+        end_game()
+    else:
+        print("\n")
+        print("Oops, please enter 1")
+        graduation()
+
+def end_game():
+    global name, grades, school, friends, clubs, favour, relationship, lifeguard_job, grocery_job, mcd_job, money
+    global math_uni, math_college, science_uni, science_college, bus_uni, bus_college, work_after
+    print("\n")
+    print("Play again?")
+    print("1: Yes")
+    print("2: No thanks, I'm done")
+    choice = input("Enter 1 or 2: ")
+
+    if choice == '1':
+        print("\n")
+        name = [ ]
+        grades = 55
+        school = 50
+        friends = [ ]
+        relationship = 65
+        clubs = [ ]
+        favour = False
+        lifeguard_job = False
+        grocery_job = False
+        mcd_job = False
+        money = 0
+        math_uni = False
+        math_college = False
+        science_uni = False
+        science_college = False
+        bus_uni = False
+        bus_college = False
+        work_after = False
+        grade_scholarship = False
+        people_scholarship = False
+        intro()
+
+    elif choice == '2':
+        print("\n")
+        print("Game over.")
+        print("Thanks for playing, hope you enjoyed!")
+
+    else:
+        print("\n")
+        print("Oops, please enter 1 or 2")
+        end_gam()
+        
+#main
+global name, grades, school, friends, clubs, favour, relationship, lifeguard_job, grocery_job, mcd_job, money
+global math_uni, math_college, science_uni, science_college, bus_uni, bus_college, work_after, grade_scholarship, people_scholarship
+name = [ ]
+grades = 55
+school = 50
+friends = [ ]
+relationship = 65
+clubs = [ ]
+favour = False
+lifeguard_job = False
+grocery_job = False
+mcd_job = False
+money = 0
+math_uni = False
+math_college = False
+science_uni = False
+science_college = False
+bus_uni = False
+bus_college = False
+work_after = False
+grade_scholarship = False
+people_scholarship = False
+intro()
